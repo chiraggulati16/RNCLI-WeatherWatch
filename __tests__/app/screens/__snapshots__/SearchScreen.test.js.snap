@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchScreen/> Unit test cases using fully mounted SearchScreen Component <SearchScreen/> generate snapshot 1`] = `ReactWrapper {}`;
+
+exports[`<SearchScreen/> Unit test cases using fully mounted SearchScreen Component <SearchScreen/> render without crashing 1`] = `ReactWrapper {}`;
