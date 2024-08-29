@@ -1,8 +1,8 @@
-import {Text, Image, View} from "react-native";
-import {WeeklyData} from "../../models/Weather";
-import {formatDate} from "../../helpers/utils";
-import getWeatherImage from "../../helpers/getWeatherImage";
-import {styles} from "./styles";
+import {Text, Image, View} from 'react-native';
+import {WeeklyData} from '../../models/Weather';
+import {formatDate} from '../../helpers/utils';
+import getWeatherImage from '../../helpers/getWeatherImage';
+import {styles} from './styles';
 
 interface WeatherCardProps {
   weather: WeeklyData | undefined;

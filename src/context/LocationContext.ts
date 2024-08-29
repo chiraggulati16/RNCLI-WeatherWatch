@@ -1,5 +1,5 @@
-import React, { createContext, useContext } from 'react';
-import { Location } from '../models/Location';
+import React, {createContext, useContext} from 'react';
+import {Location} from '../models/Location';
 
 // Define a type for the context value
 export type AppContextType = {
@@ -8,7 +8,9 @@ export type AppContextType = {
 };
 
 // Create the context with a default value (optional)
-export const LocationContext = createContext<AppContextType | undefined>(undefined);
+export const LocationContext = createContext<AppContextType | undefined>(
+  undefined,
+);
 
 // Custom hook to use the AppContext
 export const useLocationContext = (): AppContextType => {

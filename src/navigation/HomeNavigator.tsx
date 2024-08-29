@@ -1,10 +1,10 @@
-import {NavigationContainer} from "@react-navigation/native";
-import {LocationProvider} from "../context/LocationProvider";
-import NavigationService from "./NavigationService";
-import Header from "../components/Header";
-import HomeScreen from "../screens/HomeScreen";
-import SearchScreen from "../screens/SearchScreen";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {NavigationContainer} from '@react-navigation/native';
+import {LocationProvider} from '../context/LocationProvider';
+import NavigationService from './NavigationService';
+import Header from '../components/Header';
+import HomeScreen from '../screens/HomeScreen';
+import SearchScreen from '../screens/SearchScreen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 

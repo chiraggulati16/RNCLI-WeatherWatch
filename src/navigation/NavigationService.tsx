@@ -1,4 +1,4 @@
-import {CommonActions} from "@react-navigation/native";
+import {CommonActions} from '@react-navigation/native';
 let _navigator: any;
 
 //Setting top level navigator from App.js
@@ -17,7 +17,7 @@ function navigate(routeName: string, params: any = {}) {
   );
 }
 
-function reset(routeName: string, params: any) {
+function reset(routeName: string) {
   _navigator.dispatch(
     CommonActions.reset({
       index: 0,

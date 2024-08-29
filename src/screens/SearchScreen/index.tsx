@@ -1,11 +1,11 @@
-import {FlatList, Text, TouchableOpacity, View} from "react-native";
-import {WeatherService} from "../../api/WeatherService";
-import {Location} from "../../models/Location";
-import SearchBar from "../../components/SearchBar";
-import { useState} from "react";
-import {useLocationContext} from "../../context/LocationContext";
-import NavigationService from "../../navigation/NavigationService";
-import { styles } from "./styles";
+import {FlatList, Text, TouchableOpacity, View} from 'react-native';
+import {WeatherService} from '../../api/WeatherService';
+import {Location} from '../../models/Location';
+import SearchBar from '../../components/SearchBar';
+import {useState} from 'react';
+import {useLocationContext} from '../../context/LocationContext';
+import NavigationService from '../../navigation/NavigationService';
+import {styles} from './styles';
 
 const SearchScreen = () => {
   const [locations, setLocations] = useState<Location[]>([]);

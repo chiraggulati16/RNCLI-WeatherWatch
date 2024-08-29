@@ -6,10 +6,11 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
+    "lintFix": "eslint --fix .",
     "start": "react-native start",
     "test": "jest",
     "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
-    "prettier": "prettier *.tsx .*.tsx *.js .*.js"
+    "prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx)\""
   },
   "dependencies": {
     "@react-native-community/netinfo": "^11.3.2",

@@ -1,9 +1,9 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   card: {
     padding: 16,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
     borderRadius: 8,
     marginBottom: 8,
     margin: 7,
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   temperature: {
     fontSize: 22,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   image: {
     width: 50,
@@ -22,6 +22,6 @@ export const styles = StyleSheet.create({
   },
   date: {
     fontSize: 16,
-    color: "#666",
+    color: '#666',
   },
 });

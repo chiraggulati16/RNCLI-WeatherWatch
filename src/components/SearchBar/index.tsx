@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import {View, TextInput, Button } from "react-native";
-import {styles} from "./styles";
+import React, {useState} from 'react';
+import {View, TextInput, Button} from 'react-native';
+import {styles} from './styles';
 
 interface SearchBarProps {
   testId: string;
@@ -8,7 +8,7 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({onSearch}) => {
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState('');
 
   return (
     <View style={styles.container}>

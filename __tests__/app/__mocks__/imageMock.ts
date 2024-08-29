@@ -1,2 +1,2 @@
-module.exports = "ImageMock";
-module.exports.ReactComponent = "ImageMock"
+module.exports = 'ImageMock';
+module.exports.ReactComponent = 'ImageMock';
