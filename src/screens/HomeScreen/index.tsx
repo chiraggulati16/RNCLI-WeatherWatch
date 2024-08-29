@@ -1,11 +1,12 @@
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import {useEffect, useState} from 'react';
-import {useLocationContext} from '../context/LocationContext';
-import {WeatherData, WeeklyData} from '../models/Weather';
-import {WeatherService} from '../api/WeatherService';
-import {formatDate, mapHourlyWeatherData} from '../helpers/utils';
-import getWeatherImage from '../helpers/getWeatherImage';
-import WeatherCard from '../components/WeatherCard';
+import {useLocationContext} from '../../context/LocationContext';
+import {WeatherData, WeeklyData} from '../../models/Weather';
+import {WeatherService} from '../../api/WeatherService';
+import {formatDate, mapHourlyWeatherData} from '../../helpers/utils';
+import getWeatherImage from '../../helpers/getWeatherImage';
+import WeatherCard from '../../components/WeatherCard';
+import { styles } from './styles';
 
 const HomeScreen = () => {
   const {location} = useLocationContext();
@@ -52,13 +53,5 @@ const HomeScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {flex: 1},
-  header: {fontSize: 24, fontWeight: 'bold', marginBottom: 8, marginTop: 20},
-  temperature: {fontSize: 32, fontWeight: 'bold'},
-  loc: {fontSize: 24},
-  image: {width: 50, height: 50},
-});
 
 export default HomeScreen;

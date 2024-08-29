@@ -17,6 +17,20 @@ jest.mock("@react-navigation/native", ()=>{
     }
 })
 
+jest.mock('axios', () => {
+    return {
+      create: () => {
+        return {
+          interceptors: {
+            request: {eject: jest.fn(), use: jest.fn()},
+            response: {eject: jest.fn(), use: jest.fn()},
+          },
+          get: jest.fn()
+        };
+      },
+    };
+  });
+
 global.console = {
     ...console,
     // uncomment to ignore a specific log level

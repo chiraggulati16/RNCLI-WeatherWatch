@@ -8,9 +8,11 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
+    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "prettier": "prettier *.tsx .*.tsx *.js .*.js"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^11.3.2",
     "@react-native/js-polyfills": "^0.75.2",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
@@ -37,6 +39,7 @@
     "@types/enzyme": "^3.10.18",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.2.6",
+    "axios-mock-adapter": "^2.0.0",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
     "eslint": "^8.19.0",

@@ -3,7 +3,9 @@ module.exports = {
     preset: "react-native",
     testMatch: [
       "<rootDir>/__tests__/**/*.js",
-      "**/?(*.)(spec|test).js?(x)"
+      "**/?(*.)(spec|test).js?(x)",
+      "<rootDir>/__tests__/**/*.ts",
+      "**/?(*.)(spec|test).ts?(x)"
     ],
     moduleFileExtensions: [
       "ts",

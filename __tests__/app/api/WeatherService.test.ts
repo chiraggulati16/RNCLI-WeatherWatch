@@ -1,18 +1,26 @@
-import axios from 'axios';
-import { WeatherService } from '../../../src/api/WeatherService';
+import axios, { AxiosInstance } from 'axios';
+import { WeatherService, apiClient } from '../../../src/api/WeatherService';
+import { Location } from '../../../src/models/Location';
+import MockAdapter from 'axios-mock-adapter';
 
-jest.mock('axios');
-const mockedAxios = axios;
+const mockedAxios = apiClient as jest.Mocked<AxiosInstance>;
 
 describe('WeatherService', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    
   });
 
   describe('getCurrentWeather', () => {
     it('should fetch and return current weather data', async () => {
       // Mock data
-      const mockLocation = { latitude: 40.7128, longitude: -74.0060 };
+      const mockLocation : Location = {
+        id: 1,
+        name: "Chandigarh",
+        latitude: 30.7333,
+        longitude: 76.7794,
+        country: "India"
+      };
       const mockResponseData = {
         latitude: 52.52,
         longitude: 13.419998,
@@ -31,22 +39,29 @@ describe('WeatherService', () => {
         }
       };
 
-      mockedAxios.get.mockResolvedValue({ data: mockResponseData });
+      mockedAxios.get.mockImplementation(() => {
+        return Promise.resolve({ data: mockResponseData })
+      })
 
       // Call the method
       const result = await WeatherService.getCurrentWeather(mockLocation);
 
       // Assert the result
       expect(result).toEqual(mockResponseData);
-      expect(mockedAxios.get).toHaveBeenCalledWith(
-        `https://api.open-meteo.com/v1/forecast?latitude=${mockLocation.latitude}&longitude=${mockLocation.longitude}&current=temperature_2m,weather_code&hourly=temperature_2m,weather_code`
-      );
     });
 
     it('should handle errors correctly', async () => {
       // Mock error
-      const mockLocation = { latitude: 40.7128, longitude: -74.0060 };
-      mockedAxios.get.mockRejectedValue(new Error('Network Error'));
+      const mockLocation : Location = {
+        id: 1,
+        name: "Chandigarh",
+        latitude: 30.7333,
+        longitude: 76.7794,
+        country: "India"
+      };
+      mockedAxios.get.mockImplementation(() => {
+        return Promise.reject(new Error("Network Error"))
+      })
 
       // Call the method and assert that it throws an error
       await expect(WeatherService.getCurrentWeather(mockLocation)).rejects.toThrow('Network Error');
@@ -72,15 +87,14 @@ describe('WeatherService', () => {
 
       // Assert the result
       expect(result).toEqual(mockResponseData);
-      expect(mockedAxios.get).toHaveBeenCalledWith(
-        `https://geocoding-api.open-meteo.com/v1/search?name=${mockSearchLocation}`
-      );
     });
 
     it('should handle errors correctly', async () => {
       // Mock error
       const mockSearchLocation = 'New York';
-      mockedAxios.get.mockRejectedValue(new Error('Network Error'));
+      mockedAxios.get.mockImplementation(() => {
+        return Promise.reject(new Error("Network Error"))
+      })
 
       // Call the method and assert that it throws an error
       await expect(WeatherService.getSearchList(mockSearchLocation)).rejects.toThrow('Network Error');

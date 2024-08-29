@@ -1,24 +1,10 @@
 import * as React from "react";
-import { mount, shallow } from "enzyme";
 import SearchScreen from "../../../src/screens/SearchScreen";
-import { LocationContext } from '../../../src/context/LocationContext';
 import { renderWithContext } from "../../mountWithContext";
-import { toJson} from "enzyme-to-json"
 import { WeatherService } from "../../../src/api/WeatherService";
 import { act } from 'react-dom/test-utils';
 import NavigationService from "../../../src/navigation/NavigationService";
-let wrapper;
 
-const defaultProps = {
-    location : {
-        id: 1,
-        name: "Chandigarh",
-        latitude: 30.7333,
-        longitude: 76.7794,
-        country: "India"
-      },
-      setLocation : jest.fn()
-}
 afterEach(() => {
     jest.clearAllMocks();
     jest.resetAllMocks();
